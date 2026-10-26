@@ -1,0 +1,38 @@
+@model Department
+
+@{
+    ViewData["Title"] = "Delete Department";
+}
+
+<h2 class="mb-4">Delete Department</h2>
+
+<div class="card shadow-sm border-danger">
+    <div class="card-body p-4">
+        <div class="alert alert-warning">
+            Are you sure you want to delete this department?
+        </div>
+
+        <p><strong>ID:</strong> @Model.Id</p>
+        <p><strong>Name:</strong> @Model.Name</p>
+        <p><strong>Students:</strong> @Model.Students.Count</p>
+
+        @if (Model.Students.Any())
+        {
+            <div class="alert alert-danger">
+                This department has students. You cannot delete it until the students are reassigned.
+            </div>
+
+            <a asp-action="Index" class="btn btn-outline-secondary">Back</a>
+        }
+        else
+        {
+            <form asp-action="Delete" asp-route-id="@Model.Id" method="post">
+                @Html.AntiForgeryToken()
+                <input type="hidden" asp-for="Id" />
+
+                <button type="submit" class="btn btn-danger">Confirm Delete</button>
+                <a asp-action="Index" class="btn btn-outline-secondary">Cancel</a>
+            </form>
+        }
+    </div>
+</div>

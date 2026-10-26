@@ -1,0 +1,34 @@
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="mb-4">
+    <h2>Dashboard</h2>
+    <p class="text-muted">Welcome to the School Management System.</p>
+</div>
+
+<div class="row g-4">
+    <div class="col-md-6">
+        <div class="card shadow-sm border-0">
+            <div class="card-body">
+                <h5 class="text-muted">Total Students</h5>
+                <h2>@ViewBag.StudentsCount</h2>
+                <a asp-controller="Student" asp-action="Index" class="btn btn-primary">
+                    Manage Students
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card shadow-sm border-0">
+            <div class="card-body">
+                <h5 class="text-muted">Total Departments</h5>
+                <h2>@ViewBag.DepartmentsCount</h2>
+                <a asp-controller="Department" asp-action="Index" class="btn btn-primary">
+                    Manage Departments
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

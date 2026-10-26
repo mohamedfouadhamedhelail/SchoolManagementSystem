@@ -1,0 +1,97 @@
+html {
+  font-size: 14px;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: #f5f7fb;
+  color: #202938;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.sidebar {
+  width: 250px;
+  min-width: 250px;
+  background-color: #172033;
+}
+
+  .sidebar h4 {
+    font-weight: 700;
+  }
+
+  .sidebar .nav-link {
+    color: #d5dbea;
+    padding: 12px 14px;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+  }
+
+    .sidebar .nav-link:hover {
+      background-color: #2b3852;
+      color: #ffffff;
+    }
+
+.topbar {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e6eaf0;
+}
+
+.card {
+  border-radius: 12px;
+}
+
+.card-body {
+  padding: 24px;
+}
+
+.btn {
+  border-radius: 7px;
+}
+
+.form-control,
+.form-select {
+  border-radius: 7px;
+  padding: 10px 12px;
+}
+
+.table thead th {
+  background-color: #f8fafc;
+  color: #667085;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+.text-danger {
+  font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 180px;
+    min-width: 180px;
+  }
+
+  main .container-fluid {
+    padding: 16px !important;
+  }
+
+  .card-body {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .d-flex.min-vh-100 {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    min-width: 100%;
+  }
+}
